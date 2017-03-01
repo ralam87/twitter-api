@@ -1,0 +1,14 @@
+.grid-33
+  .app--section
+    ul.app--message--list
+      each message in messages
+        li
+          h3
+            | Conversation with 
+            a #{message.messageSenderScnName}
+          ul.app--message--conversation
+            li.app--message
+              .app--avatar(style='background-image: url(' + message.messageImg + ')')
+                img(src='message.messageImg')
+              p.app--message--text #{message.messageText}
+              p.app--message--timestamp #{message.messageTime.slice(4, 10)}

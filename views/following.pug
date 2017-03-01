@@ -1,0 +1,17 @@
+.grid-33
+  .app--section
+    ul.app--user--list
+      each follow in following
+        li
+          .circle--fluid
+            .circle--fluid--cell.circle--fluid--primary
+              a.app--tweet--author
+                .app--avatar(style='background-image: url(' + follow.friendPic + ')')
+                  img(src='follow.friendPic')
+                h4= follow.friendName
+                p @#{follow.friendscName}
+            .circle--fluid--cell
+              if follow.followingBool
+                a.button.button-text Unfollow.
+              else
+                a.button.button-text Follow
